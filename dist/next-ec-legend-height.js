@@ -2,16 +2,24 @@
  * name: next-ec-legend-height
  * url: https://github.com/afeiship/next-ec-legend-height
  * version: 1.0.0
- * date: 2019-09-05T08:19:13.981Z
+ * date: 2019-09-05T08:20:23.233Z
  * license: MIT
  */
 
 (function() {
   var global = global || this || window || Function('return this')();
   var nx = global.nx || require('next-js-core2');
-  var DEFAULT_OPTIONS = { callback: nx.noop, canvas: null, legends: [] };
   var nxMeasureText = nx.measureText || require('next-measure-text');
   var nxGroupByLimit = nx.groupByLimit || require('next-group-by-limit');
+  var DEFAULT_OPTIONS = {
+    callback: nx.noop,
+    canvas: null,
+    legends: [],
+    lineHeight: 20,
+    limit: 500,
+    itemWidth: 25,
+    itemGap: 0
+  };
 
   nx.ecLegendHeight = function(inOptions) {
     var options = nx.mix(null, DEFAULT_OPTIONS, inOptions);
@@ -22,7 +30,7 @@
         callback: options.callback,
         text: item.name
       });
-      return options.itemWidth + mt.width;
+      return options.itemWidth + options.itemGap + mt.width;
     });
     var groups = nxGroupByLimit(legendItems, options.limit);
     var len = groups.length;
