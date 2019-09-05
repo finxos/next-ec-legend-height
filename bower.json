@@ -1,0 +1,28 @@
+{
+  "name": "next-ec-legend-height",
+  "version": "0.0.1",
+  "description": "nextBoilerplatePackageDescription",
+  "main": "dist/next-ec-legend-height.js",
+  "authors": [
+    "afei"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "next"
+  ],
+  "homepage": "https://github.com/afeiship/next-ec-legend-height",
+  "moduleType": [
+    "amd"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "build",
+    "src",
+    "gulp",
+    "gulpfile.js"
+  ]
+}
