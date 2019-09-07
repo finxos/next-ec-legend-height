@@ -2,7 +2,7 @@
  * name: next-ec-legend-height
  * url: https://github.com/afeiship/next-ec-legend-height
  * version: 1.0.0
- * date: 2019-09-05T08:20:23.233Z
+ * date: 2019-09-07T09:09:46.361Z
  * license: MIT
  */
 
@@ -16,7 +16,7 @@
     canvas: null,
     legends: [],
     lineHeight: 20,
-    limit: 500,
+    limitWidth: 500,
     itemWidth: 25,
     itemGap: 0
   };
@@ -32,7 +32,7 @@
       });
       return options.itemWidth + options.itemGap + mt.width;
     });
-    var groups = nxGroupByLimit(legendItems, options.limit);
+    var groups = nxGroupByLimit(legendItems, options.limitWidth);
     var len = groups.length;
     return options.lineHeight * len + 10 * (len - 1);
   };
